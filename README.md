@@ -7,7 +7,7 @@ This repo contains the official implementation of ICLR 2024 paper "Is ImageNet w
 
 ## Overview
 ### Motivation
-Our goal is to build robust representations by leveraging the rich information in video frames. Standard SSL frameworks such as SimCLR, DINo etc. often assume correspondences between different views. This is true whether using dense or global representations by pooling e.g. IBoT. While it is relatively straightforward to establish correspondences in images, it becomes more challenging when dealing with temporal deformations, requiring some form of object tracking. In videos with a large field of view or ego-motion, obtaining correspondences becomes even more difficult.  
+Our goal is to build robust representations by leveraging the rich information in video frames. Standard SSL frameworks such as SimCLR, DINo etc. often assume correspondences between different views. This is true whether using dense or global representations by pooling e.g. iBOT. While it is relatively straightforward to establish correspondences in images, it becomes more challenging when dealing with temporal deformations, requiring some form of object tracking. In videos with a large field of view or ego-motion, obtaining correspondences becomes even more difficult.  
 
 
 <div align="center">
@@ -57,7 +57,8 @@ The requirements are easily installed via Anaconda. Here we create a conda envir
 ```
 conda create -n metrix python=3.8.2
 conda activate dora
-conda install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 timm=0.5.4 pillow==9.4.0 scipy tensorboardX faiss-gpu==1.6.1 tqdm lmdb scikit-learn pyarrow==2.0.0 DALL-E munkres six einops
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install pillow==9.4.0 scipy tensorboardX faiss-gpu==1.6.1 tqdm lmdb scikit-learn pyarrow==2.0.0 DALL-E munkres six einops
 ```
 
 ### Pretraining DoRA
@@ -83,4 +84,39 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py --arch vit_small -
   --warmup_teacher_temp_epochs 30 --weight_decay 0.04 --weight_decay_end 0.4 \
   --frame_per_clip 8 --step_between_clips 60
 ```
+
+
+## Evaluation
+
+### Linear Probing and KNN
+
+For Linear probing on ImageNet-1K
+
+```
+python -m torch.distributed.launch --nproc_per_node=4 eval_linear.py \
+--batch_size_per_gpu 1024 --n_last_blocks 4 --avgpool_patchtokens 0 --arch vit_small --lr 0.005 \
+--pretrained_weights /path-to-checkpoint/venice/checkpoint.pth --data_path /dataset/imagenet/ \
+--output_dir /path-to-output-dir/venice/LP/
+```
+
+For KNN evaluation on ImageNet-1K
+
+```
+python3 -m torch.distributed.launch --nproc_per_node=4 eval_knn.py \
+--arch vit_small --checkpoint_key teacher --data_path /dataset/imagenet/ \
+--pretrained_weights /path-to-checkpoint/venice/checkpoint.pth
+```
+
+### Semantic Segmentation (ADE20K) and Object Detection (MS-COCO)
+
+Please follow the evaluation scripts from [iBOT](https://github.com/bytedance/ibot)
+
+
+### Video Object Segmentation (DAVIS) and Object Tracking (GOT-10K)
+
+(todo)
+
+
+#### TODO
+- Add checkpoints, logfiles
 

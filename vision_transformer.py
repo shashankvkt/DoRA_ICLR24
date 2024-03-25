@@ -221,7 +221,7 @@ class VisionTransformer(nn.Module):
             x, attn,query,key = blk(x)
         x = self.norm(x)
         return x[:, 0], x, attn, query,key
-        # return x[:, 0]
+        
 
     def get_last_selfattention(self, x):
         x = self.prepare_tokens(x)
@@ -239,8 +239,7 @@ class VisionTransformer(nn.Module):
         output = []
         for i, blk in enumerate(self.blocks):
             x,_,_,_ = blk(x)
-            # print(x.shape)
-            # exit()
+            
             if len(self.blocks) - i <= n:
                 output.append(self.norm(x))
         return output
@@ -248,8 +247,7 @@ class VisionTransformer(nn.Module):
 
     def track_using_mask(self, x, n=1):
         
-        # print(cnt)
-        # x = video[:,cnt,:]
+        
         x = self.prepare_tokens(x)
 
         all_attn, all_query, all_key = [], [], []
