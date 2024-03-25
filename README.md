@@ -115,6 +115,18 @@ Please follow the evaluation scripts from [iBOT](https://github.com/bytedance/ib
 
 (todo)
 
+## CITATION
+
+If you find this repository useful, please consider giving a star ⭐ and citation:
+
+```
+@inproceedings{venkataramanan2024imagenet,  
+  title={Is ImageNet worth 1 video? Learning strong image encoders from 1 long unlabelled video},  
+  author={Venkataramanan, Shashanka and Rizve, Mamshad Nayeem and Carreira, Jo{\~a}o and Asano, Yuki M and Avrithis, Yannis},  
+  booktitle={International Conference on Learning Representations},  
+  year={2024}  
+}
+```
 
 #### TODO
 - Add checkpoints, logfiles
