@@ -26,7 +26,6 @@ Importantly, we do not use any off-the-shelf object tracker or optical flow netw
   <img width="100%" alt="DoRA illustration" src="images/Wt_img.jpeg" width="80%">
 </div>
 
-## Dataset Preparation
 
 ### Original videos
 
