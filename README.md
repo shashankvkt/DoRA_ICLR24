@@ -1,5 +1,5 @@
 # DoRA_ICLR24
-This repo contains the official implementation of ICLR 2024 paper "Is ImageNet worth 1 video? Learning strong image encoders from 1 long unlabelled video""  
+This repo contains the official implementation of ICLR 2024 paper "Is ImageNet worth 1 video? Learning strong image encoders from 1 long unlabelled video" 
 
 [[`arXiv`](https://arxiv.org/abs/2310.08584)], [[`paper`](https://openreview.net/forum?id=Yen1lGns2o)], [[`dataset`](https://uvaauas.figshare.com/articles/dataset/Dora_WalkingTours_Dataset_ICLR_2024_/25189275)], [[`Project Page`](https://shashankvkt.github.io/dora)]
 
@@ -26,11 +26,10 @@ Importantly, we do not use any off-the-shelf object tracker or optical flow netw
   <img width="100%" alt="DoRA illustration" src="images/Wt_img.jpeg" width="80%">
 </div>
 
-## Dataset Preparation
 
 ### Original videos
 
-The complete list of WTour videos are available in [Walking Tour Dataset](https://huggingface.co/datasets/shawshankvkt/Walking_Tours), comprising the YouTube links the detailed instructions on how to download it using necessary scripts.  
+The complete list of WTour videos are available in [HuggingFace Dataset](https://huggingface.co/datasets/shawshankvkt/Walking_Tours), comprising the YouTube links the detailed instructions on how to download it using necessary scripts.  
 
 In case, the links are broken, you can download the videos directly from [Walking Tour Dataset](https://uvaauas.figshare.com/articles/dataset/Dora_WalkingTours_Dataset_ICLR_2024_/25189275)
 
@@ -115,6 +114,23 @@ Please follow the evaluation scripts from [iBOT](https://github.com/bytedance/ib
 ### Video Object Segmentation (DAVIS) and Object Tracking (GOT-10K)
 
 (todo)
+
+## CITATION
+
+If you find this repository useful, please consider giving a star ⭐ and citation:
+
+```
+@inproceedings{venkataramanan2024imagenet,  
+  title={Is ImageNet worth 1 video? Learning strong image encoders from 1 long unlabelled video},  
+  author={Venkataramanan, Shashanka and Rizve, Mamshad Nayeem and Carreira, Jo{\~a}o and Asano, Yuki M and Avrithis, Yannis},  
+  booktitle={International Conference on Learning Representations},  
+  year={2024}  
+}
+
+```
+
+
+
 
 
 #### TODO
