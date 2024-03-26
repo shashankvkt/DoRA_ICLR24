@@ -127,17 +127,10 @@ If you find this repository useful, please consider giving a star ⭐ and citati
   booktitle={International Conference on Learning Representations},  
   year={2024}  
 }
-<<<<<<< HEAD
-
 ```
 
 
 
-
-=======
-```
->>>>>>> 101f1294397d182a79a10b01098bd771271b9fa2
 
 #### TODO
 - Add checkpoints, logfiles
-
