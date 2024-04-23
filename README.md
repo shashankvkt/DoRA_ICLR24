@@ -94,7 +94,7 @@ For Linear probing on ImageNet-1K
 
 ```
 python -m torch.distributed.launch --nproc_per_node=4 eval_linear.py \
---batch_size_per_gpu 1024 --n_last_blocks 4 --avgpool_patchtokens 0 --arch vit_small --lr 0.005 \
+--batch_size_per_gpu 512 --n_last_blocks 4 --avgpool_patchtokens 0 --arch vit_small --lr 0.01  \
 --pretrained_weights /path-to-checkpoint/venice/checkpoint.pth --data_path /dataset/imagenet/ \
 --output_dir /path-to-output-dir/venice/LP/
 ```
