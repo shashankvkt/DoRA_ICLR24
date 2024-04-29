@@ -86,6 +86,44 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py --arch vit_small -
 ```
 
 
+## Pretrained models
+You can download the weights of the pretrained backbone used for downstream tasks. All backbones are `ViT-S/16` models.
+
+
+<table>
+  <tr>
+    <th>Epochs</th>
+    <th>Model</th>
+    <th>Pretrained Dataset</th>
+    <th colspan="5">Download</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <th>DINO</th>
+    <th>WT-Venice</th>
+    <td><a href="https://drive.google.com/file/d/15YuTs6ulBa3yDuZdkF3azksRAdbOYahh/view?usp=sharing">backbone</a></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <th>DoRA</th>
+    <th>WT-Venice</th>
+    <td><a href="https://drive.google.com/file/d/1lkgfwyWWpzG0jKbn8h3zNhZJYxJOjqnN/view?usp=sharing">backbone</a></td>
+  </tr>
+  <tr>
+    <td>300</td>
+    <th>DoRA</th>
+    <th>WT-Venice</th>
+    <td><a href="https://drive.google.com/file/d/1wo90aVHcIBVvkkI3hDDf--Hz7aCNCqg2/view?usp=sharing">backbone</a></td>
+   </tr>
+  <tr>
+    <td>100</td>
+    <th>DoRA</th>
+    <th>WT-all</th>
+    <td><a href="https://drive.google.com/file/d/1SaULsFamQxYpkXHKk1V4IkOeCun-phhX/view?usp=sharing">backbone</a></td>
+   </tr>
+</table>
+
+
 ## Evaluation
 
 ### Linear Probing and KNN
@@ -128,9 +166,3 @@ If you find this repository useful, please consider giving a star ⭐ and citati
   year={2024}  
 }
 ```
-
-
-
-
-#### TODO
-- Add checkpoints, logfiles
